@@ -1,0 +1,12 @@
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\SimuladorDeInsumos.exe.config
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\SimuladorDeInsumos.exe
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\SimuladorDeInsumos.pdb
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.frmPrincipal.resources
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.Properties.Resources.resources
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csproj.GenerateResource.Cache
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.exe
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.pdb
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.dll
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\ICSharpCode.SharpZipLib.dll
+c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.pdb
+C:\Users\Ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csprojResolveAssemblyReference.cache
