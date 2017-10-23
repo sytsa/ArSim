@@ -145,6 +145,15 @@ namespace SimuladorDeInsumos
             }
 
         }
-        
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

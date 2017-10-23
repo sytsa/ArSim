@@ -57,17 +57,18 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(192, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(209, 9);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(407, 42);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Simulador de Insumos";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnAbrir
             // 
             this.btnAbrir.Location = new System.Drawing.Point(430, 56);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(357, 25);
+            this.btnAbrir.Size = new System.Drawing.Size(343, 25);
             this.btnAbrir.TabIndex = 1;
             this.btnAbrir.Text = "Abrir Archivo";
             this.btnAbrir.UseVisualStyleBackColor = true;
@@ -228,11 +229,12 @@
             // 
             this.tabSimulador.Controls.Add(this.pageAnalizador);
             this.tabSimulador.Controls.Add(this.pageSimulador);
+            this.tabSimulador.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabSimulador.Enabled = false;
-            this.tabSimulador.Location = new System.Drawing.Point(6, 133);
+            this.tabSimulador.Location = new System.Drawing.Point(0, 149);
             this.tabSimulador.Name = "tabSimulador";
             this.tabSimulador.SelectedIndex = 0;
-            this.tabSimulador.Size = new System.Drawing.Size(781, 428);
+            this.tabSimulador.Size = new System.Drawing.Size(784, 413);
             this.tabSimulador.TabIndex = 19;
             // 
             // pageAnalizador
@@ -240,7 +242,7 @@
             this.pageAnalizador.Location = new System.Drawing.Point(4, 22);
             this.pageAnalizador.Name = "pageAnalizador";
             this.pageAnalizador.Padding = new System.Windows.Forms.Padding(3);
-            this.pageAnalizador.Size = new System.Drawing.Size(773, 402);
+            this.pageAnalizador.Size = new System.Drawing.Size(776, 387);
             this.pageAnalizador.TabIndex = 0;
             this.pageAnalizador.Text = "Analizador gráfico";
             this.pageAnalizador.UseVisualStyleBackColor = true;
@@ -251,7 +253,7 @@
             this.pageSimulador.Location = new System.Drawing.Point(4, 22);
             this.pageSimulador.Name = "pageSimulador";
             this.pageSimulador.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSimulador.Size = new System.Drawing.Size(766, 402);
+            this.pageSimulador.Size = new System.Drawing.Size(776, 400);
             this.pageSimulador.TabIndex = 1;
             this.pageSimulador.Text = "Simulador de Insumos";
             this.pageSimulador.UseVisualStyleBackColor = true;
@@ -270,7 +272,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 573);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.tabSimulador);
             this.Controls.Add(this.lblFilas);
             this.Controls.Add(this.cboxFilasH);
@@ -290,7 +293,9 @@
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulador de insumos";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.tabSimulador.ResumeLayout(false);
             this.pageSimulador.ResumeLayout(false);
             this.pageSimulador.PerformLayout();
