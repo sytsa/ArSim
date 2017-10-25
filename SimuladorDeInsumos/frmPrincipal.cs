@@ -1,15 +1,11 @@
 ﻿using Excel;
 using SimuladorDeInsumos.Clases;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace SimuladorDeInsumos
 {
@@ -74,76 +70,97 @@ namespace SimuladorDeInsumos
                     }
 
                     // Mapeo de hojas a clases
-                    DataTable tablaMaestroProd = excel.Tables[Simulador.MaestroProd.NumeroDeHoja];
-                    DataTable tablaStockRef = excel.Tables[Simulador.MaestroProd.NumeroDeHojaStock];
-                    DataTable tablaMaestroOpe = excel.Tables[Simulador.MaestroOpe.NumeroDeHoja];
-                    DataTable tablaHistorialT = excel.Tables[Simulador.HistorialT.NumeroDeHoja];
-
-                    lblFilas.Text = "Productos: " + tablaMaestroProd.Rows.Count
-                                  + " | Stock Ref: " + tablaStockRef.Rows.Count
-                                  + " | Transacciones: " + tablaMaestroOpe.Rows.Count
-                                  + " | Historial: " + tablaHistorialT.Rows.Count;
+                    DataTable tablaMaestroProd, tablaStockRef, tablaMaestroOpe, tablaHistorialT;
+                    Mapeo_Hojas_Clases(out tablaMaestroProd, out tablaStockRef, out tablaMaestroOpe, out tablaHistorialT);
 
                     // Mapeo de datos a clases
-                    foreach (DataRow fila in tablaMaestroProd.Rows)
-                    {
-                        Simulador.MaestroProd.AgregarProducto(
-                            new Producto(
-                                Convert.ToString(fila["Código"]),
-                                Convert.ToString(fila["Descripción"]),
-                                Convert.ToString(fila["Unidad de medida"]),
-                                Convert.ToInt32(fila["LeadTime"]),
-                                Convert.ToDouble(fila["Valor unitario"])
-                                ));
-                    }
-                    pbarFilas.Value += 25;
-                    cboxFilasMP.Checked = true;
-
-                    foreach (DataRow fila in tablaStockRef.Rows)
-                    {
-                        Simulador.MaestroProd.AgregarFecha(
-                            Convert.ToString(fila["Código"]),
-                            DateTime.FromOADate((double)fila["Fecha"]),
-                            Convert.ToInt32(fila["Stock"] is "-" ? 0 : fila["Stock"])
-                            );
-                    }
-                    pbarFilas.Value += 25;
-                    cboxFilasS.Checked = true;
-
-                    foreach (DataRow fila in tablaMaestroOpe.Rows)
-                    {
-                        Simulador.MaestroOpe.AgregarOperacion(
-                            new Operacion(
-                                Convert.ToString(fila["Tipo de documento"]),
-                                Convert.ToString(fila["Descripción"]),
-                                Convert.ToString(fila["Signo"]),
-                                Convert.ToBoolean(fila["Considerar"] is "No" ? false : true)
-                                ));
-                    }
-                    pbarFilas.Value += 25;
-                    cboxFilasMT.Checked = true;
-
-                    foreach (DataRow fila in tablaHistorialT.Rows)
-                    {
-                        Simulador.HistorialT.AgregarTransaccion(
-                            new Transaccion(
-                                Convert.ToString(fila["Código"]),
-                                DateTime.FromOADate((double)fila["Fecha"]),
-                                Convert.ToString(fila["Tipo de documento"]),
-                                Convert.ToInt32(fila["Cantidad"])
-                                ));
-                    }
-                    pbarFilas.Value += 25;
-                    cboxFilasH.Checked = true;
+                    Mapeo_Datos_Clases(tablaMaestroProd, tablaStockRef, tablaMaestroOpe, tablaHistorialT);
 
                     // Cierre del archivo
                     lectorExcel.Close();
 
                     // Habilitamos el panel del analizador
                     tabSimulador.Enabled = true;
+
+                    // Llenado del combo de maestro de productos
+                    comboMProd.Items.Clear();
+                    foreach (Producto prod in Simulador.MaestroProd.productos)
+                    {
+                        comboMProd.Items.Add(prod._productId + " - " + prod._descripcion);
+                    }
                 }
             }
 
+        }
+
+        private void Mapeo_Hojas_Clases(out DataTable tablaMaestroProd, out DataTable tablaStockRef, out DataTable tablaMaestroOpe, out DataTable tablaHistorialT)
+        {
+            tablaMaestroProd = excel.Tables[Simulador.MaestroProd.NumeroDeHoja];
+            tablaStockRef = excel.Tables[Simulador.MaestroProd.NumeroDeHojaStock];
+            tablaMaestroOpe = excel.Tables[Simulador.MaestroOpe.NumeroDeHoja];
+            tablaHistorialT = excel.Tables[Simulador.HistorialT.NumeroDeHoja];
+            lblFilas.Text = "Productos: " + tablaMaestroProd.Rows.Count
+                          + " | Stock Ref: " + tablaStockRef.Rows.Count
+                          + " | Transacciones: " + tablaMaestroOpe.Rows.Count
+                          + " | Historial: " + tablaHistorialT.Rows.Count;
+        }
+
+        private void Mapeo_Datos_Clases(DataTable tablaMaestroProd, DataTable tablaStockRef, DataTable tablaMaestroOpe, DataTable tablaHistorialT)
+        {
+            foreach (DataRow fila in tablaMaestroProd.Rows)
+            {
+                if (!(fila[0] is DBNull && fila[1] is DBNull && fila[2] is DBNull))
+                    Simulador.MaestroProd.AgregarProducto(
+                    new Producto(
+                        Convert.ToString(fila["Código"]),
+                        Convert.ToString(fila["Descripción"]),
+                        Convert.ToString(fila["Unidad de medida"]),
+                        Convert.ToInt32(fila["LeadTime"]),
+                        Convert.ToDouble(fila["Valor unitario"])
+                        ));
+            }
+            pbarFilas.Value += 25;
+            cboxFilasMP.Checked = true;
+
+            foreach (DataRow fila in tablaStockRef.Rows)
+            {
+                if (!(fila[0] is DBNull && fila[1] is DBNull && fila[2] is DBNull))
+                    Simulador.MaestroProd.AgregarFecha(
+                    Convert.ToString(fila["Código"]),
+                    DateTime.FromOADate((double)fila["Fecha"]),
+                    Convert.ToInt32(fila["Stock"] is "-" ? 0 : fila["Stock"])
+                    );
+            }
+            pbarFilas.Value += 25;
+            cboxFilasS.Checked = true;
+
+            foreach (DataRow fila in tablaMaestroOpe.Rows)
+            {
+                if (!(fila[0] is DBNull && fila[1] is DBNull && fila[2] is DBNull))
+                    Simulador.MaestroOpe.AgregarOperacion(
+                    new Operacion(
+                        Convert.ToString(fila["Tipo de documento"]),
+                        Convert.ToString(fila["Descripción"]),
+                        Convert.ToString(fila["Signo"]),
+                        Convert.ToBoolean(fila["Considerar"] is "No" ? false : true)
+                        ));
+            }
+            pbarFilas.Value += 25;
+            cboxFilasMT.Checked = true;
+
+            foreach (DataRow fila in tablaHistorialT.Rows)
+            {
+                if (!(fila[0] is DBNull && fila[1] is DBNull && fila[2] is DBNull))
+                    Simulador.HistorialT.AgregarTransaccion(
+                    new Transaccion(
+                        Convert.ToString(fila["Código"]),
+                        DateTime.FromOADate((double)fila["Fecha"]),
+                        Convert.ToString(fila["Tipo de documento"]),
+                        Convert.ToInt32(fila["Cantidad"])
+                        ));
+            }
+            pbarFilas.Value += 25;
+            cboxFilasH.Checked = true;
         }
 
         private void lblTitulo_Click(object sender, EventArgs e)
@@ -151,9 +168,80 @@ namespace SimuladorDeInsumos
 
         }
 
-        private void frmPrincipal_Load(object sender, EventArgs e)
+        private void comboMProd_SelectedIndexChanged(object sender, EventArgs e)
         {
+            AnalisisGraficoProducto();
+        }
 
+        private void comboGrafico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AnalisisGraficoProducto();
+        }
+
+        private void AnalisisGraficoProducto()
+        {
+            if (comboMProd.SelectedItem == null || comboGrafico.SelectedItem == null)
+            {
+                MessageBox.Show("Seleccione por favor un producto y un tipo de gráfico");
+            }
+            else
+            {
+                string prodId = comboMProd.SelectedItem.ToString().Split(' ')[0];
+                string tipoGrafico = comboGrafico.SelectedItem.ToString();
+                graficoAG.Series[0].Points.Clear();
+
+                List<Operacion> opeValidas;
+                switch (tipoGrafico)
+                {
+                    case "Entradas":
+                        opeValidas = Simulador.MaestroOpe.FiltrarOperaciones("+");
+                        break;
+                    case "Salidas":
+                        opeValidas = Simulador.MaestroOpe.FiltrarOperaciones("-");
+                        break;
+                    case "Variación de Stock":
+                        opeValidas = Simulador.MaestroOpe.FiltrarOperaciones("+");
+                        opeValidas.AddRange(Simulador.MaestroOpe.FiltrarOperaciones("-"));
+                        break;
+                    default:
+                        opeValidas = Simulador.MaestroOpe.FiltrarOperaciones("+");
+                        break;
+                }
+                List<Transaccion> grafico = new List<Transaccion>();
+
+                foreach (Operacion ope in opeValidas)
+                {
+                    grafico.AddRange(Simulador.HistorialT.transacciones.FindAll(item => (item._productoId == prodId) && (item._operacionId == ope._operacionId)));
+                }
+
+                //graficoAG.Series[0].Name = comboMProd.SelectedItem.ToString();
+
+                DateTime x, xAnt = DateTime.Now.Date;
+                int y, yAnt = 0;
+                foreach (Transaccion t in grafico)
+                {
+                    x = t._fecha;
+                    y = t._cantidad;
+                    if(x == xAnt)
+                    {
+                        yAnt += y;
+                    }
+                    else
+                    {
+                        if(xAnt != DateTime.Now.Date)
+                            graficoAG.Series[0].Points.AddXY(xAnt, yAnt);
+                        xAnt = x;
+                        yAnt = 0;
+                    }
+                }
+
+                if(graficoAG.Series[0].Points.Count == 0)
+                {
+                    MessageBox.Show("No hay valores para este producto y este tipo de gráfico");
+                    //graficoAG.Series[0].Name = "";
+                }
+
+            }
         }
     }
 }

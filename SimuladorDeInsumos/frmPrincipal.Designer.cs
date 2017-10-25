@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.lblArchivo = new System.Windows.Forms.Label();
@@ -49,17 +52,24 @@
             this.pageAnalizador = new System.Windows.Forms.TabPage();
             this.pageSimulador = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
+            this.graficoAG = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboMProd = new System.Windows.Forms.ComboBox();
+            this.comboGrafico = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabSimulador.SuspendLayout();
+            this.pageAnalizador.SuspendLayout();
             this.pageSimulador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Myriad Hebrew", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.Location = new System.Drawing.Point(209, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(407, 42);
+            this.lblTitulo.Size = new System.Drawing.Size(387, 46);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Simulador de Insumos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -239,6 +249,11 @@
             // 
             // pageAnalizador
             // 
+            this.pageAnalizador.Controls.Add(this.label5);
+            this.pageAnalizador.Controls.Add(this.comboGrafico);
+            this.pageAnalizador.Controls.Add(this.comboMProd);
+            this.pageAnalizador.Controls.Add(this.label4);
+            this.pageAnalizador.Controls.Add(this.graficoAG);
             this.pageAnalizador.Location = new System.Drawing.Point(4, 22);
             this.pageAnalizador.Name = "pageAnalizador";
             this.pageAnalizador.Padding = new System.Windows.Forms.Padding(3);
@@ -253,7 +268,7 @@
             this.pageSimulador.Location = new System.Drawing.Point(4, 22);
             this.pageSimulador.Name = "pageSimulador";
             this.pageSimulador.Padding = new System.Windows.Forms.Padding(3);
-            this.pageSimulador.Size = new System.Drawing.Size(776, 400);
+            this.pageSimulador.Size = new System.Drawing.Size(776, 387);
             this.pageSimulador.TabIndex = 1;
             this.pageSimulador.Text = "Simulador de Insumos";
             this.pageSimulador.UseVisualStyleBackColor = true;
@@ -267,6 +282,74 @@
             this.label3.Size = new System.Drawing.Size(593, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "En estos momenos este sector no está disponible. Gracias :)";
+            // 
+            // graficoAG
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.graficoAG.ChartAreas.Add(chartArea2);
+            this.graficoAG.Cursor = System.Windows.Forms.Cursors.Default;
+            this.graficoAG.Dock = System.Windows.Forms.DockStyle.Bottom;
+            legend2.Name = "Legend1";
+            this.graficoAG.Legends.Add(legend2);
+            this.graficoAG.Location = new System.Drawing.Point(3, 46);
+            this.graficoAG.Name = "graficoAG";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.IsValueShownAsLabel = true;
+            series2.IsVisibleInLegend = false;
+            series2.IsXValueIndexed = true;
+            series2.LabelToolTip = "#VALX #VAL";
+            series2.Legend = "Legend1";
+            series2.Name = "Producto";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            this.graficoAG.Series.Add(series2);
+            this.graficoAG.Size = new System.Drawing.Size(770, 338);
+            this.graficoAG.TabIndex = 0;
+            this.graficoAG.Text = "Analizador Gráfico";
+            this.graficoAG.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(159, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Seleccionar producto a analizar:";
+            // 
+            // comboMProd
+            // 
+            this.comboMProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboMProd.FormattingEnabled = true;
+            this.comboMProd.Location = new System.Drawing.Point(8, 19);
+            this.comboMProd.Name = "comboMProd";
+            this.comboMProd.Size = new System.Drawing.Size(412, 21);
+            this.comboMProd.TabIndex = 2;
+            this.comboMProd.SelectedIndexChanged += new System.EventHandler(this.comboMProd_SelectedIndexChanged);
+            // 
+            // comboGrafico
+            // 
+            this.comboGrafico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboGrafico.FormattingEnabled = true;
+            this.comboGrafico.Items.AddRange(new object[] {
+            "Entradas",
+            "Salidas",
+            "Variación de Stock"});
+            this.comboGrafico.Location = new System.Drawing.Point(601, 19);
+            this.comboGrafico.Name = "comboGrafico";
+            this.comboGrafico.Size = new System.Drawing.Size(154, 21);
+            this.comboGrafico.TabIndex = 3;
+            this.comboGrafico.SelectedIndexChanged += new System.EventHandler(this.comboGrafico_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(598, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(136, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Seleccionar tipo de gráfico:";
             // 
             // frmPrincipal
             // 
@@ -295,10 +378,12 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulador de insumos";
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.tabSimulador.ResumeLayout(false);
+            this.pageAnalizador.ResumeLayout(false);
+            this.pageAnalizador.PerformLayout();
             this.pageSimulador.ResumeLayout(false);
             this.pageSimulador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,6 +412,11 @@
         private System.Windows.Forms.TabPage pageAnalizador;
         private System.Windows.Forms.TabPage pageSimulador;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart graficoAG;
+        private System.Windows.Forms.ComboBox comboMProd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboGrafico;
     }
 }
 
