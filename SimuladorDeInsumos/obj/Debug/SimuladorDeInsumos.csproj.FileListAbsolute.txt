@@ -9,3 +9,15 @@ c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\Simulado
 c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.dll
 c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\ICSharpCode.SharpZipLib.dll
 c:\users\ariel\documents\visual studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.pdb
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\SimuladorDeInsumos.exe.config
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\SimuladorDeInsumos.exe
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\SimuladorDeInsumos.pdb
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.dll
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.pdb
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.frmPrincipal.resources
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.Properties.Resources.resources
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csproj.GenerateResource.Cache
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.exe
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.pdb
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csprojResolveAssemblyReference.cache

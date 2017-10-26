@@ -8,7 +8,7 @@ namespace SimuladorDeInsumos.Clases
 {
     public class HistorialTransacciones
     {
-        private List<Transaccion> transacciones = new List<Transaccion>();
+        public List<Transaccion> transacciones = new List<Transaccion>();
         public int NumeroDeHoja { get; set; }
 
         public void AgregarTransaccion(Transaccion t)

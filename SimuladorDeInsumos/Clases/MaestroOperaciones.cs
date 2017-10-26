@@ -8,7 +8,7 @@ namespace SimuladorDeInsumos.Clases
 {
     public class MaestroOperaciones
     {
-        private List<Operacion> operaciones = new List<Operacion>();
+        public List<Operacion> operaciones = new List<Operacion>();
         public int NumeroDeHoja { get; set; }
         public void AgregarOperacion(Operacion o)
         {
@@ -18,6 +18,11 @@ namespace SimuladorDeInsumos.Clases
         public Operacion BuscarTransaccion(String operacionId)
         {
             return operaciones.Find(item => item._operacionId == operacionId);
+        }
+
+        public List<Operacion> FiltrarOperaciones(String signo)
+        {
+            return operaciones.FindAll(item => (item._signo == signo) && (item._considerar == true));
         }
     }
 }

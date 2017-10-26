@@ -8,7 +8,7 @@ namespace SimuladorDeInsumos
 {
     public class MaestroProductos
     {
-        private List<Producto> productos = new List<Producto>();
+        public List<Producto> productos = new List<Producto>();
         public int NumeroDeHoja { get; set; }
         public int NumeroDeHojaStock { get; set; }
         public void AgregarProducto(Producto p)
