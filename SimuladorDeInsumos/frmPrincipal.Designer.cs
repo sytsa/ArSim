@@ -31,7 +31,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.lblArchivo = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
@@ -57,28 +56,25 @@
             this.graficoAG = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pageSimulador = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
+            this.pnlValores = new System.Windows.Forms.Panel();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.lblMaximo = new System.Windows.Forms.Label();
+            this.lblMinimo = new System.Windows.Forms.Label();
+            this.lblMedia = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabSimulador.SuspendLayout();
             this.pageAnalizador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).BeginInit();
             this.pageSimulador.SuspendLayout();
+            this.pnlValores.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Myriad Hebrew", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(209, 9);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(387, 46);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Simulador de Insumos";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnAbrir
             // 
-            this.btnAbrir.Location = new System.Drawing.Point(430, 56);
+            this.btnAbrir.Location = new System.Drawing.Point(4, 3);
             this.btnAbrir.Name = "btnAbrir";
-            this.btnAbrir.Size = new System.Drawing.Size(343, 25);
+            this.btnAbrir.Size = new System.Drawing.Size(248, 25);
             this.btnAbrir.TabIndex = 1;
             this.btnAbrir.Text = "Abrir Archivo";
             this.btnAbrir.UseVisualStyleBackColor = true;
@@ -87,7 +83,7 @@
             // lblArchivo
             // 
             this.lblArchivo.AutoSize = true;
-            this.lblArchivo.Location = new System.Drawing.Point(3, 62);
+            this.lblArchivo.Location = new System.Drawing.Point(257, 9);
             this.lblArchivo.Name = "lblArchivo";
             this.lblArchivo.Size = new System.Drawing.Size(46, 13);
             this.lblArchivo.TabIndex = 2;
@@ -95,18 +91,19 @@
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(51, 59);
+            this.txtPath.Location = new System.Drawing.Point(305, 6);
             this.txtPath.Name = "txtPath";
             this.txtPath.ReadOnly = true;
-            this.txtPath.Size = new System.Drawing.Size(373, 20);
+            this.txtPath.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtPath.Size = new System.Drawing.Size(210, 20);
             this.txtPath.TabIndex = 3;
             // 
             // pbarHojas
             // 
-            this.pbarHojas.Location = new System.Drawing.Point(51, 85);
+            this.pbarHojas.Location = new System.Drawing.Point(51, 34);
             this.pbarHojas.Name = "pbarHojas";
             this.pbarHojas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pbarHojas.Size = new System.Drawing.Size(373, 17);
+            this.pbarHojas.Size = new System.Drawing.Size(115, 17);
             this.pbarHojas.Step = 25;
             this.pbarHojas.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbarHojas.TabIndex = 6;
@@ -115,7 +112,7 @@
             // 
             this.cboxTablasMP.AutoSize = true;
             this.cboxTablasMP.Enabled = false;
-            this.cboxTablasMP.Location = new System.Drawing.Point(430, 86);
+            this.cboxTablasMP.Location = new System.Drawing.Point(172, 34);
             this.cboxTablasMP.Name = "cboxTablasMP";
             this.cboxTablasMP.Size = new System.Drawing.Size(89, 17);
             this.cboxTablasMP.TabIndex = 7;
@@ -126,7 +123,7 @@
             // 
             this.cboxTablasMT.AutoSize = true;
             this.cboxTablasMT.Enabled = false;
-            this.cboxTablasMT.Location = new System.Drawing.Point(605, 86);
+            this.cboxTablasMT.Location = new System.Drawing.Point(347, 34);
             this.cboxTablasMT.Name = "cboxTablasMT";
             this.cboxTablasMT.Size = new System.Drawing.Size(89, 17);
             this.cboxTablasMT.TabIndex = 8;
@@ -137,7 +134,7 @@
             // 
             this.cboxTablasS.AutoSize = true;
             this.cboxTablasS.Enabled = false;
-            this.cboxTablasS.Location = new System.Drawing.Point(525, 86);
+            this.cboxTablasS.Location = new System.Drawing.Point(267, 34);
             this.cboxTablasS.Name = "cboxTablasS";
             this.cboxTablasS.Size = new System.Drawing.Size(74, 17);
             this.cboxTablasS.TabIndex = 9;
@@ -148,7 +145,7 @@
             // 
             this.cboxTablasH.AutoSize = true;
             this.cboxTablasH.Enabled = false;
-            this.cboxTablasH.Location = new System.Drawing.Point(700, 85);
+            this.cboxTablasH.Location = new System.Drawing.Point(442, 33);
             this.cboxTablasH.Name = "cboxTablasH";
             this.cboxTablasH.Size = new System.Drawing.Size(73, 17);
             this.cboxTablasH.TabIndex = 10;
@@ -158,7 +155,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 86);
+            this.label1.Location = new System.Drawing.Point(3, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 13);
             this.label1.TabIndex = 11;
@@ -167,7 +164,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 108);
+            this.label2.Location = new System.Drawing.Point(3, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 13);
             this.label2.TabIndex = 12;
@@ -175,10 +172,10 @@
             // 
             // pbarFilas
             // 
-            this.pbarFilas.Location = new System.Drawing.Point(51, 108);
+            this.pbarFilas.Location = new System.Drawing.Point(51, 57);
             this.pbarFilas.Name = "pbarFilas";
             this.pbarFilas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.pbarFilas.Size = new System.Drawing.Size(373, 17);
+            this.pbarFilas.Size = new System.Drawing.Size(115, 17);
             this.pbarFilas.Step = 25;
             this.pbarFilas.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbarFilas.TabIndex = 13;
@@ -187,7 +184,7 @@
             // 
             this.cboxFilasH.AutoSize = true;
             this.cboxFilasH.Enabled = false;
-            this.cboxFilasH.Location = new System.Drawing.Point(700, 107);
+            this.cboxFilasH.Location = new System.Drawing.Point(442, 55);
             this.cboxFilasH.Name = "cboxFilasH";
             this.cboxFilasH.Size = new System.Drawing.Size(73, 17);
             this.cboxFilasH.TabIndex = 17;
@@ -198,7 +195,7 @@
             // 
             this.cboxFilasS.AutoSize = true;
             this.cboxFilasS.Enabled = false;
-            this.cboxFilasS.Location = new System.Drawing.Point(525, 108);
+            this.cboxFilasS.Location = new System.Drawing.Point(267, 56);
             this.cboxFilasS.Name = "cboxFilasS";
             this.cboxFilasS.Size = new System.Drawing.Size(74, 17);
             this.cboxFilasS.TabIndex = 16;
@@ -209,7 +206,7 @@
             // 
             this.cboxFilasMT.AutoSize = true;
             this.cboxFilasMT.Enabled = false;
-            this.cboxFilasMT.Location = new System.Drawing.Point(605, 108);
+            this.cboxFilasMT.Location = new System.Drawing.Point(347, 56);
             this.cboxFilasMT.Name = "cboxFilasMT";
             this.cboxFilasMT.Size = new System.Drawing.Size(89, 17);
             this.cboxFilasMT.TabIndex = 15;
@@ -220,7 +217,7 @@
             // 
             this.cboxFilasMP.AutoSize = true;
             this.cboxFilasMP.Enabled = false;
-            this.cboxFilasMP.Location = new System.Drawing.Point(430, 108);
+            this.cboxFilasMP.Location = new System.Drawing.Point(172, 56);
             this.cboxFilasMP.Name = "cboxFilasMP";
             this.cboxFilasMP.Size = new System.Drawing.Size(89, 17);
             this.cboxFilasMP.TabIndex = 14;
@@ -241,10 +238,10 @@
             this.tabSimulador.Controls.Add(this.pageSimulador);
             this.tabSimulador.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tabSimulador.Enabled = false;
-            this.tabSimulador.Location = new System.Drawing.Point(0, 149);
+            this.tabSimulador.Location = new System.Drawing.Point(0, 80);
             this.tabSimulador.Name = "tabSimulador";
             this.tabSimulador.SelectedIndex = 0;
-            this.tabSimulador.Size = new System.Drawing.Size(784, 413);
+            this.tabSimulador.Size = new System.Drawing.Size(784, 482);
             this.tabSimulador.TabIndex = 19;
             // 
             // pageAnalizador
@@ -257,7 +254,7 @@
             this.pageAnalizador.Location = new System.Drawing.Point(4, 22);
             this.pageAnalizador.Name = "pageAnalizador";
             this.pageAnalizador.Padding = new System.Windows.Forms.Padding(3);
-            this.pageAnalizador.Size = new System.Drawing.Size(776, 387);
+            this.pageAnalizador.Size = new System.Drawing.Size(776, 456);
             this.pageAnalizador.TabIndex = 0;
             this.pageAnalizador.Text = "Analizador gráfico";
             this.pageAnalizador.UseVisualStyleBackColor = true;
@@ -316,7 +313,7 @@
             this.graficoAG.Name = "graficoAG";
             this.graficoAG.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
             series1.IsValueShownAsLabel = true;
             series1.IsVisibleInLegend = false;
             series1.IsXValueIndexed = true;
@@ -326,7 +323,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
             series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
             this.graficoAG.Series.Add(series1);
-            this.graficoAG.Size = new System.Drawing.Size(770, 338);
+            this.graficoAG.Size = new System.Drawing.Size(770, 407);
             this.graficoAG.TabIndex = 0;
             this.graficoAG.Text = "Analizador Gráfico";
             this.graficoAG.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
@@ -352,12 +349,90 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "En estos momenos este sector no está disponible. Gracias :)";
             // 
+            // pnlValores
+            // 
+            this.pnlValores.BackColor = System.Drawing.Color.White;
+            this.pnlValores.Controls.Add(this.label9);
+            this.pnlValores.Controls.Add(this.label8);
+            this.pnlValores.Controls.Add(this.lblMedia);
+            this.pnlValores.Controls.Add(this.lblMinimo);
+            this.pnlValores.Controls.Add(this.lblMaximo);
+            this.pnlValores.Controls.Add(this.lblProducto);
+            this.pnlValores.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlValores.Location = new System.Drawing.Point(523, 0);
+            this.pnlValores.Name = "pnlValores";
+            this.pnlValores.Size = new System.Drawing.Size(261, 80);
+            this.pnlValores.TabIndex = 20;
+            this.pnlValores.Visible = false;
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(3, 5);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(104, 13);
+            this.lblProducto.TabIndex = 0;
+            this.lblProducto.Text = "Nombre producto";
+            this.lblProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblMaximo
+            // 
+            this.lblMaximo.AutoSize = true;
+            this.lblMaximo.Location = new System.Drawing.Point(3, 18);
+            this.lblMaximo.Name = "lblMaximo";
+            this.lblMaximo.Size = new System.Drawing.Size(49, 13);
+            this.lblMaximo.TabIndex = 1;
+            this.lblMaximo.Text = "Máximo: ";
+            this.lblMaximo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblMinimo
+            // 
+            this.lblMinimo.AutoSize = true;
+            this.lblMinimo.Location = new System.Drawing.Point(3, 31);
+            this.lblMinimo.Name = "lblMinimo";
+            this.lblMinimo.Size = new System.Drawing.Size(48, 13);
+            this.lblMinimo.TabIndex = 2;
+            this.lblMinimo.Text = "Mínimo: ";
+            this.lblMinimo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblMedia
+            // 
+            this.lblMedia.AutoSize = true;
+            this.lblMedia.Location = new System.Drawing.Point(3, 44);
+            this.lblMedia.Name = "lblMedia";
+            this.lblMedia.Size = new System.Drawing.Size(39, 13);
+            this.lblMedia.TabIndex = 3;
+            this.lblMedia.Text = "Media:";
+            this.lblMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(101, 18);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Desvio: ";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(101, 31);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Varianza: ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(784, 562);
+            this.Controls.Add(this.pnlValores);
             this.Controls.Add(this.tabSimulador);
             this.Controls.Add(this.lblFilas);
             this.Controls.Add(this.cboxFilasH);
@@ -375,7 +450,6 @@
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.lblArchivo);
             this.Controls.Add(this.btnAbrir);
-            this.Controls.Add(this.lblTitulo);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulador de insumos";
@@ -385,14 +459,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).EndInit();
             this.pageSimulador.ResumeLayout(false);
             this.pageSimulador.PerformLayout();
+            this.pnlValores.ResumeLayout(false);
+            this.pnlValores.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnAbrir;
         private System.Windows.Forms.Label lblArchivo;
         private System.Windows.Forms.TextBox txtPath;
@@ -418,6 +492,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboGrafico;
+        private System.Windows.Forms.Panel pnlValores;
+        private System.Windows.Forms.Label lblMinimo;
+        private System.Windows.Forms.Label lblMaximo;
+        private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblMedia;
     }
 }
 

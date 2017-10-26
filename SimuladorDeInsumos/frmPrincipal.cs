@@ -224,35 +224,36 @@ namespace SimuladorDeInsumos
 
                 DateTime fecAnterior;
                 int cantidad = 0;
-                // Chequear que estoy perdiendo datos
-                for (int i = 0; i < grafico.Count; i++)
+                if (grafico.Count > 0)
                 {
-                    fecAnterior = grafico[i]._fecha;
-                    cantidad = grafico[i]._cantidad;
-                    i++;
-                    while( fecAnterior == grafico[i]._fecha && i < grafico.Count)
+                    fecAnterior = grafico[0]._fecha;
+                    cantidad = grafico[0]._cantidad;
+                    // Chequear que estoy perdiendo datos
+                    for (int i = 1; i < grafico.Count; i++)
                     {
-                        cantidad += grafico[i]._cantidad;
-                        i++;
+                        while (i < grafico.Count && fecAnterior == grafico[i]._fecha)
+                        {
+                            cantidad += grafico[i]._cantidad;
+                            i++;
+                        }
+                        graficoAG.Series[0].Points.AddXY(fecAnterior, cantidad);
+                        if (i < grafico.Count)
+                        {
+                            fecAnterior = grafico[i]._fecha;
+                            cantidad = grafico[i]._cantidad;
+                        }
+                        if (i == grafico.Count - 1)
+                        {
+                            graficoAG.Series[0].Points.AddXY(fecAnterior, cantidad);
+                        }
                     }
-                    graficoAG.Series[0].Points.AddXY(fecAnterior, cantidad);
+
+                    pnlValores.Visible = true;
+                    lblProducto.Text = comboMProd.SelectedItem.ToString();
+                    lblMaximo.Text = "Máximo: " + graficoAG.Series[0].Points.FindMaxByValue("X");
+                    lblMinimo.Text = "Mínimo: " + graficoAG.Series[0].Points.FindMinByValue("Y");
                 }
-
-                //foreach (Transaccion t in grafico)
-                //{
-                //    if (fecAnterior != t._fecha)
-                //    {
-                //        graficoAG.Series[0].Points.AddXY(t._fecha, t._cantidad);
-                //        fecAnterior = t._fecha;
-                //        esRepetido = false;
-                //    }
-                //    else
-                //    {
-                        
-                //        cantidad += t._cantidad;
-                //    }
-                //}
-
+                
                 if(graficoAG.Series[0].Points.Count == 0)
                 {
                     MessageBox.Show("No hay valores para este producto y este tipo de gráfico");
