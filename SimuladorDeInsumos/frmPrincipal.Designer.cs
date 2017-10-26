@@ -28,15 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-=======
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
->>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.lblArchivo = new System.Windows.Forms.Label();
@@ -63,19 +57,10 @@
             this.graficoAG = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pageSimulador = new System.Windows.Forms.TabPage();
             this.label3 = new System.Windows.Forms.Label();
-            this.graficoAG = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboMProd = new System.Windows.Forms.ComboBox();
-            this.comboGrafico = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.tabSimulador.SuspendLayout();
             this.pageAnalizador.SuspendLayout();
-<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).BeginInit();
-=======
->>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
             this.pageSimulador.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -367,74 +352,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "En estos momenos este sector no está disponible. Gracias :)";
             // 
-            // graficoAG
-            // 
-            chartArea2.Name = "ChartArea1";
-            this.graficoAG.ChartAreas.Add(chartArea2);
-            this.graficoAG.Cursor = System.Windows.Forms.Cursors.Default;
-            this.graficoAG.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend2.Name = "Legend1";
-            this.graficoAG.Legends.Add(legend2);
-            this.graficoAG.Location = new System.Drawing.Point(3, 46);
-            this.graficoAG.Name = "graficoAG";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series2.IsValueShownAsLabel = true;
-            series2.IsVisibleInLegend = false;
-            series2.IsXValueIndexed = true;
-            series2.LabelToolTip = "#VALX #VAL";
-            series2.Legend = "Legend1";
-            series2.Name = "Producto";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.graficoAG.Series.Add(series2);
-            this.graficoAG.Size = new System.Drawing.Size(770, 338);
-            this.graficoAG.TabIndex = 0;
-            this.graficoAG.Text = "Analizador Gráfico";
-            this.graficoAG.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Seleccionar producto a analizar:";
-            // 
-            // comboMProd
-            // 
-            this.comboMProd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboMProd.FormattingEnabled = true;
-            this.comboMProd.Location = new System.Drawing.Point(8, 19);
-            this.comboMProd.Name = "comboMProd";
-            this.comboMProd.Size = new System.Drawing.Size(412, 21);
-            this.comboMProd.TabIndex = 2;
-            this.comboMProd.SelectedIndexChanged += new System.EventHandler(this.comboMProd_SelectedIndexChanged);
-            // 
-            // comboGrafico
-            // 
-            this.comboGrafico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboGrafico.FormattingEnabled = true;
-            this.comboGrafico.Items.AddRange(new object[] {
-            "Entradas",
-            "Salidas",
-            "Variación de Stock"});
-            this.comboGrafico.Location = new System.Drawing.Point(601, 19);
-            this.comboGrafico.Name = "comboGrafico";
-            this.comboGrafico.Size = new System.Drawing.Size(154, 21);
-            this.comboGrafico.TabIndex = 3;
-            this.comboGrafico.SelectedIndexChanged += new System.EventHandler(this.comboGrafico_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(598, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Seleccionar tipo de gráfico:";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,13 +382,9 @@
             this.tabSimulador.ResumeLayout(false);
             this.pageAnalizador.ResumeLayout(false);
             this.pageAnalizador.PerformLayout();
-<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).EndInit();
-=======
->>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
             this.pageSimulador.ResumeLayout(false);
             this.pageSimulador.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.graficoAG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
