@@ -15,9 +15,16 @@ C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsu
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.dll
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\ICSharpCode.SharpZipLib.dll
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\bin\Debug\Excel.pdb
+<<<<<<< HEAD
+=======
+C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csprojResolveAssemblyReference.cache
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.frmPrincipal.resources
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.Properties.Resources.resources
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csproj.GenerateResource.Cache
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.exe
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.pdb
+<<<<<<< HEAD
 C:\Users\Ariel-MaximusVIII\Documents\Visual Studio 2017\Projects\SimuladorDeInsumos\SimuladorDeInsumos\obj\Debug\SimuladorDeInsumos.csprojResolveAssemblyReference.cache
+=======
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770

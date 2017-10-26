@@ -150,7 +150,10 @@ namespace SimuladorDeInsumos
             pbarFilas.Value += 25;
             cboxFilasMT.Checked = true;
 
+<<<<<<< HEAD
             
+=======
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
             foreach (DataRow fila in tablaHistorialT.Rows)
             {
                 if (!(fila[0] is DBNull && fila[1] is DBNull && fila[2] is DBNull))
@@ -162,7 +165,10 @@ namespace SimuladorDeInsumos
                         Convert.ToInt32(fila["Cantidad"])
                         ));
             }
+<<<<<<< HEAD
             
+=======
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
             pbarFilas.Value += 25;
             cboxFilasH.Checked = true;
         }
@@ -178,12 +184,21 @@ namespace SimuladorDeInsumos
         }
 
         private void comboGrafico_SelectedIndexChanged(object sender, EventArgs e)
+<<<<<<< HEAD
         {
             AnalisisGraficoProducto();
         }
 
         private void AnalisisGraficoProducto()
         {
+=======
+        {
+            AnalisisGraficoProducto();
+        }
+
+        private void AnalisisGraficoProducto()
+        {
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
             if (comboMProd.SelectedItem == null || comboGrafico.SelectedItem == null)
             {
                 MessageBox.Show("Seleccione por favor un producto y un tipo de gráfico");
@@ -213,14 +228,18 @@ namespace SimuladorDeInsumos
                 }
                 List<Transaccion> grafico = new List<Transaccion>();
 
+<<<<<<< HEAD
                 lectorExcel.AsDataSet().Tables[Simulador.HistorialT.NumeroDeHoja].Rows.Clear();
                 
 
+=======
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
                 foreach (Operacion ope in opeValidas)
                 {
                     grafico.AddRange(Simulador.HistorialT.transacciones.FindAll(item => (item._productoId == prodId) && (item._operacionId == ope._operacionId)));
                 }
 
+<<<<<<< HEAD
 
                 DateTime fecAnterior;
                 int cantidad = 0;
@@ -256,6 +275,33 @@ namespace SimuladorDeInsumos
                 if(graficoAG.Series[0].Points.Count == 0)
                 {
                     MessageBox.Show("No hay valores para este producto y este tipo de gráfico");
+=======
+                //graficoAG.Series[0].Name = comboMProd.SelectedItem.ToString();
+
+                DateTime x, xAnt = DateTime.Now.Date;
+                int y, yAnt = 0;
+                foreach (Transaccion t in grafico)
+                {
+                    x = t._fecha;
+                    y = t._cantidad;
+                    if(x == xAnt)
+                    {
+                        yAnt += y;
+                    }
+                    else
+                    {
+                        if(xAnt != DateTime.Now.Date)
+                            graficoAG.Series[0].Points.AddXY(xAnt, yAnt);
+                        xAnt = x;
+                        yAnt = 0;
+                    }
+                }
+
+                if(graficoAG.Series[0].Points.Count == 0)
+                {
+                    MessageBox.Show("No hay valores para este producto y este tipo de gráfico");
+                    //graficoAG.Series[0].Name = "";
+>>>>>>> 830e580c21baef650e70fd7ec05dac7998139770
                 }
 
             }
