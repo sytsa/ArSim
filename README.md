@@ -1,4 +1,4 @@
-# Simulador de abastecimientos.
+# Simulador de abastecimientos
 
 Permite determinar los parámetros de abastecimiento (stock de seguridad, punto de pedido, tamaño de lote, etc.) para insumos o materiales.
 El aplicativo lee, desde un archivo Excel, el maestro de productos, el maestro de transacciones, los movimientos históricos, el stock en algún momento de la historia, una tabla de cambios de códigos (“de-para” o “chaining”).
